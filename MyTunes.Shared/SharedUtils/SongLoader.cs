@@ -24,7 +24,7 @@ namespace MyTunes
             #if __IOS__
                         return File.OpenRead(Filename);
             #elif __ANDROID__
-                        return Android.App.Application.Context.Assets.Open(Filename);
+                        return  Android.App.Application.Context.Assets.Open(Filename);
             #elif WINDOWS_PHONE_APP || WINDOWS_UWP
                         var sf = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFileAsync(Filename);
                         return await sf.OpenStreamForReadAsync();
